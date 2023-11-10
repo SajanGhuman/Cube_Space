@@ -53,7 +53,7 @@ const REGISTER = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     if (
       formData.email !== "" &&
