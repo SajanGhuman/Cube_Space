@@ -25,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $error = false;
     } else {
         $result = "Failed To fetch Algorithm. Please Try Again";
-        $error = true;
     }
     $response[] = array("result" => $result, "error" => $error);
     echo json_encode($response);
