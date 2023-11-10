@@ -1,8 +1,8 @@
  <?php
 
-  define('ADMIN_LOGIN', 'a');
+  define('ADMIN_LOGIN', 'wally');
 
-  define('ADMIN_PASSWORD', 'a');
+  define('ADMIN_PASSWORD', '12345');
 
   if (
     !isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])
