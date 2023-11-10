@@ -20,7 +20,7 @@ const ADDOLL = () => {
         setFormData({ ...formData, name: e.target.value });
         console.log(formData);
         if (e.target.value === "") {
-          setError("Name Is Empty");
+          setError("Name Is Needed");
         }
         break;
       case "notation":
@@ -28,7 +28,7 @@ const ADDOLL = () => {
         setFormData({ ...formData, notation: e.target.value });
         console.log(formData);
         if (e.target.value === "") {
-          setError("Notation Is Empty");
+          setError("Notation Is Needed");
         }
         break;
       case "description":
@@ -36,7 +36,7 @@ const ADDOLL = () => {
         setFormData({ ...formData, description: e.target.value });
         console.log(formData);
         if (e.target.value === "") {
-          setError("Description Is Empty");
+          setError("Description Is Needed");
         }
         break;
     }
