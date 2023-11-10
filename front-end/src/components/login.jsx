@@ -89,7 +89,7 @@ const LOGIN = ({ onLogin }) => {
               id="email"
               value={formData.email}
               placeholder="Enter Your Email"
-              onChange={(e) => handleChange(e, "email")}
+              onChange={e => handleChange(e, "email")}
             />
           </li>
           <li>
