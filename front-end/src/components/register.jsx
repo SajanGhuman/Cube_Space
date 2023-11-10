@@ -82,7 +82,6 @@ const REGISTER = () => {
             setMsg("Resgistered successfully!! Redirecting...");
             setTimeout(() => {
               localStorage.setItem("register", "true");
-              localStorage.setItem("email", formData.email);
               navget("/login");
             }, 3000);
           }

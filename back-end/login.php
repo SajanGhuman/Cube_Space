@@ -1,4 +1,5 @@
 <?php
+session_start();
 require('connect.php');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
@@ -12,6 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $data['email'];
     $pass = $data['password'];
 
+    $_SESSION["email"] = $email;
+    $_SESSION["pass"] = $pass;
 
     $result = '';
 
