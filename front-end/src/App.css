@@ -29,12 +29,6 @@ a:hover {
   transition: all 1s;
 }
 
-.cube-canvas {
-  position: relative;
-  display: none;  
-}
-
-
 .intro__title {
   color: yellow;
   font-size: 120px;
@@ -44,6 +38,12 @@ a:hover {
   transform: translate(-40%);
   user-select: none;
 }
+.cube-canvas {
+  position: relative;
+  display: none;  
+}
+
+
 
 .nav__ul li:hover {
   font-size: 1.5em;
@@ -160,7 +160,7 @@ a:hover {
   position: absolute;
   left: 530px;
   top: -68em;
-  transform: translate(-50%, -50%);;
+  transform: translate(-50%, -50%);
 }
 
 .table__header__pll {
