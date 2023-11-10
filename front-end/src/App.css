@@ -71,7 +71,7 @@ a:hover {
   user-select: none;
 }
 
-.home__div {
+.main__home__div {
   display: flex;
   flex-direction: column;
   position: absolute;

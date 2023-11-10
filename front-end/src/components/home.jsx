@@ -5,7 +5,7 @@ import Cube from "./cube";
 const Home = () => {
   return (
     <div>
-      <div className="home__div">
+      <div className="main__home__div">
         <h1 className="intro__title">CUBE SPACE</h1>
         <h1 className="intro__text">
           <span className="yellow">WANT TO CUBE?</span>
