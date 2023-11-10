@@ -77,14 +77,14 @@ function App(props) {
         <Route path="/fl" element={<FL />}></Route>
         <Route path="/oll" element={<OLL />}></Route>
         <Route path="/pll" element={<PLL />}></Route>
-        <Route path="/login" element={<LOGIN onLogin={handleLogin} />}></Route>
+        <Route path="/addoll" element={<ADDOLL />}></Route>
         <Route path="/register" element={<REGISTER />}></Route>
         <Route path="/addFl" element={<ADDFL />}></Route>
+        <Route path="/login" element={<LOGIN onLogin={handleLogin} />}></Route>
         <Route path="/add" element={<ADD />}></Route>
-        <Route path="/addoll" element={<ADDOLL />}></Route>
+        <Route path="/edit" element={<EDIT />}></Route>
         <Route path="/addpll" element={<ADDPLL />}></Route>
         <Route path="/needToLogin" element={<Need />}></Route>
-        <Route path="/edit" element={<EDIT />}></Route>
       </Routes>
     </div>
   );
