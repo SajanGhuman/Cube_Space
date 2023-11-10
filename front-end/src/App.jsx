@@ -8,15 +8,15 @@ import OLL from "./components/oll";
 import PLL from "./components/pll";
 import LOGIN from "./components/login";
 import REGISTER from "./components/register";
+import EDIT from "./components/edit";
 import ADDFL from "./components/addFl";
 import ADD from "./components/add";
 import ADDOLL from "./components/addoll";
 import ADDPLL from "./components/addpll";
 import Logout from "./components/logout";
 import Need from "./components/need";
-import EDIT from "./components/edit";
 
-function App(props) {
+function App() {
   const [login, setLogin] = useState(localStorage.getItem("login"));
 
   const handleLogout = () => {
@@ -75,16 +75,16 @@ function App(props) {
         <Route path="/" element={<Home />}></Route>
         <Route path="/content" element={<Content />}></Route>
         <Route path="/fl" element={<FL />}></Route>
+        <Route path="/login" element={<LOGIN onLogin={handleLogin} />}></Route>
         <Route path="/oll" element={<OLL />}></Route>
+        <Route path="/needToLogin" element={<Need />}></Route>
         <Route path="/pll" element={<PLL />}></Route>
         <Route path="/addoll" element={<ADDOLL />}></Route>
         <Route path="/register" element={<REGISTER />}></Route>
         <Route path="/addFl" element={<ADDFL />}></Route>
-        <Route path="/login" element={<LOGIN onLogin={handleLogin} />}></Route>
         <Route path="/add" element={<ADD />}></Route>
         <Route path="/edit" element={<EDIT />}></Route>
         <Route path="/addpll" element={<ADDPLL />}></Route>
-        <Route path="/needToLogin" element={<Need />}></Route>
       </Routes>
     </div>
   );
