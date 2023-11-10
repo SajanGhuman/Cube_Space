@@ -29,14 +29,11 @@ a:hover {
   transition: all 1s;
 }
 
-.nav__ul li:hover {
-  font-size: 1.5em;
-}
-
 .cube-canvas {
   position: relative;
   display: none;  
 }
+
 
 .intro__title {
   color: yellow;
@@ -46,6 +43,10 @@ a:hover {
   left: 50%;
   transform: translate(-40%);
   user-select: none;
+}
+
+.nav__ul li:hover {
+  font-size: 1.5em;
 }
 
 .intro__text {
