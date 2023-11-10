@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION["email"] = $email;
     $_SESSION["pass"] = $pass;
 
+
     $result = '';
 
     if ($email != "" and $pass != "") {

@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../App.css";
-import { useNavigate } from "react-router-dom";
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
 
 const REGISTER = () => {
   const navget = useNavigate();

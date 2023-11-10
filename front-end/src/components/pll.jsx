@@ -1,6 +1,6 @@
 import "../App.css";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 
 const PLL = () => {
   const [data, setData] = useState(null);
