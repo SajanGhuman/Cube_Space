@@ -11,10 +11,10 @@ $statement->execute();
 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 if (empty($rows)) {
-    $json = json_encode(['error' => 'No data found']);
+    $Json = json_encode(['error' => 'No data found']);
 } else {
-    $json = json_encode($rows);
+    $Json = json_encode($rows);
 }
+echo $Json;
 
-echo $json;
 ?>
