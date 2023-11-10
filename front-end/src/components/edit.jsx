@@ -1,6 +1,6 @@
 import "../App.css";
 import { useEffect, useState } from "react";
-import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const EDIT = () => {
   const navget = useNavigate();

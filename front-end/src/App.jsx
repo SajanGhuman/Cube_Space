@@ -1,4 +1,4 @@
-import { useEffect, useState, useLocation } from "react";
+import { useState } from "react";
 import "./App.css";
 import { Routes, Route, Link, Navigate } from "react-router-dom";
 import Home from "./components/home";

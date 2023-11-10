@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "../App.css";
-import { Routes, Route, Link, Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 const LOGIN = ({ onLogin }) => {
   const [formData, setFormData] = useState({
