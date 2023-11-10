@@ -3,18 +3,6 @@ import "../App.css";
 import { Routes, Route, Link } from "react-router-dom";
 
 const ADD = () => {
-//   useEffect(() => {
-//     fetch("http://localhost/react-project/back-end/add.php", {
-//       method: "GET",
-//       headers: {
-//         Authorization: "Basic " + btoa(`${email}:${pass}`),
-//       },
-//     });
-//     if(!response.ok){
-//         alert('Access denied')
-//     }
-//     cons 
-//   });
   return (
     <div class="content__div">
       <Link to="/addfl">
