@@ -37,6 +37,11 @@ const PLL = () => {
                 <td>{item.name}</td>
                 <td>{item.notation}</td>
                 <td>{item.description}</td>
+                <Link to="/edit">
+                  <div>
+                    <p>Edit</p>
+                  </div>
+                </Link>
               </tr>
             ))
           ) : (
