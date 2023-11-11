@@ -7,53 +7,48 @@ body {
   overflow-x: hidden;
 }
 
-a {
-  color: yellow;
-}
-a:hover {
-  color: white;
-}
-
 .nav__ul {
   display: flex;
-  gap: 2em;
-  color: yellow;
-  text-decoration: none;
+  gap: 1em;
   list-style: none;
-  position: absolute;
-  top: 0%;
-  transition: all 1s;
+  position: relative;
+  left: 0rem;
+  top: -22rem;
 }
 
 .nav__ul li {
+  color: yellow;
   transition: all 1s;
+  position: relative;
+  top: 3rem;
+}
+
+.nav__ul li:hover {
+  font-size: 1.1em;
+  transform: translateY(-2px);
 }
 
 .intro__title {
   color: yellow;
   font-size: 120px;
   width: 1000px;
-  position: absolute;
+  position: relative;
   left: 50%;
   transform: translate(-40%);
   user-select: none;
 }
+
 .cube-canvas {
   position: relative;
-  display: none;  
-}
-
-
-
-.nav__ul li:hover {
-  font-size: 1.5em;
+  left: -1em;
+  top: -1.5em;
 }
 
 .intro__text {
-  position: absolute;
-  top: 40%;
+  position: relative;
+  top: -19%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-25%, -50%);
   font-size: 30px;
   user-select: none;
 }
@@ -182,7 +177,7 @@ a:hover {
   gap: 1.5em;
   position: relative;
   left: 1290px;
-  top: -330px;
+  top: -260px;
   transition: all 0.5s;
 }
 
@@ -249,11 +244,11 @@ a:hover {
 .logout__div {
   position: relative;
   display: flex;
-  left: 1430px;
-  top: -330px;
+  left: 1410px;
+  top: -260px;
 }
 
-.need__div{
+.need__div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -272,5 +267,5 @@ a:hover {
   font-weight: 700;
   max-width: 150px;
   position: relative;
-  left:50px;
+  left: 50px;
 }

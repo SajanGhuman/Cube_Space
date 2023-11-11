@@ -15,17 +15,22 @@ const POINT3D = function (x, y, z) {
 
 const Cube = () => {
   const canvasRef = useRef(null);
-  const size = 100; // Set the desired size for the canvas
+  const h = 80;
+  const w = 80;
+  const cx = w / 2;
+  const cy = h /2;
+  const cz = 0;
+  const size = h/5;
 
   const vertices = [
-    new POINT3D(size / 2, size / 2, size / 2),
-    new POINT3D(size / 2, size / 2, -size / 2),
-    new POINT3D(size / 2, -size / 2, size / 2),
-    new POINT3D(size / 2, -size / 2, -size / 2),
-    new POINT3D(-size / 2, size / 2, size / 2),
-    new POINT3D(-size / 2, size / 2, -size / 2),
-    new POINT3D(-size / 2, -size / 2, size / 2),
-    new POINT3D(-size / 2, -size / 2, -size / 2),
+    new POINT3D(cx - size, cy - size, cz - size),
+    new POINT3D(cx + size, cy - size, cz - size),
+    new POINT3D(cx + size, cy + size, cz - size),
+    new POINT3D(cx - size, cy + size, cz - size),
+    new POINT3D(cx - size, cy - size, cz + size),
+    new POINT3D(cx + size, cy - size, cz + size),
+    new POINT3D(cx + size, cy + size, cz + size),
+    new POINT3D(cx - size, cy + size, cz + size),
   ];
 
   const edges = [
@@ -46,16 +51,12 @@ const Cube = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    canvas.height = size;
-    canvas.width = size;
+    canvas.height = h;
+    canvas.width = w;
     ctx.fillStyle = COLOR_BG;
     ctx.strokeStyle = COLOR_CUBE;
-    ctx.lineWidth = size / 25;
+    ctx.lineWidth = w/10;
     ctx.lineCap = "round";
-
-    let cx = size / 2;
-    let cy = size / 2;
-    let cz = size / 2;
 
     let timeDelta;
     let timeLast = 0;
@@ -65,7 +66,7 @@ const Cube = () => {
       timeDelta = timeNow - timeLast;
       timeLast = timeNow;
 
-      ctx.fillRect(0, 0, size, size);
+      ctx.fillRect(0, 0, w, h);
 
       let angle = timeDelta * 0.001 * SPEED_Z * Math.PI * 2;
       for (let v of vertices) {
@@ -106,7 +107,7 @@ const Cube = () => {
 
       requestAnimationFrame(loop);
     }
-  }, [size]);
+  }, []);
 
   return (
     <canvas id="cube-canvas" ref={canvasRef} className="cube-canvas"></canvas>

@@ -83,51 +83,86 @@ const ADDFL = () => {
   };
 
   return (
-    <div className="add__div">
-      {msg !== "" ? (
-        <span className="success">{msg}</span>
+    <div>
+      {login === "false" ? (
+        <div className="lr__div">
+          <Link to="/login">
+            <button className="login lr__button">LOGIN</button>
+          </Link>
+          <Link to="/register">
+            <button className="register lr__button">REGISTER</button>
+          </Link>
+        </div>
       ) : (
-        <span className="error">{error}</span>
+        <div className="logout__div">
+          <Logout onLogout={handleLogout} />
+        </div>
       )}
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <ul className="add__ul">
+      <nav>
+        <ul className="nav__ul">
           <li>
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              placeholder="Enter alg Name"
-              onChange={(e) => handleChange(e, "name")}
-            />
+            <Link to="/">
+              <Cube />
+            </Link>
           </li>
           <li>
-            <label htmlFor="notation">Notation:</label>
-            <input
-              type="text"
-              name="notation"
-              id="notation"
-              value={formData.notation}
-              placeholder="Enter Alg Notation"
-              onChange={(e) => handleChange(e, "notation")}
-            />
+            <Link to="/content">ALGORITHMS</Link>
           </li>
           <li>
-            <label htmlFor="description">Description:</label>
-            <input
-              type="text"
-              name="description"
-              id="description"
-              value={formData.description}
-              placeholder="Enter Alg description"
-              onChange={(e) => handleChange(e, "description")}
-            />
+            {login === "false" ? (
+              <Link to="/needToLogin">DASHBOARD</Link>
+            ) : (
+              <Link to="/dashboard">DASHBOARD</Link>
+            )}
           </li>
-          <button type="submit" className="add__submit">
-            Add Algorithm
-          </button>
         </ul>
-      </form>
+      </nav>
+      <div className="add__div">
+        {msg !== "" ? (
+          <span className="success">{msg}</span>
+        ) : (
+          <span className="error">{error}</span>
+        )}
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <ul className="add__ul">
+            <li>
+              <label htmlFor="name">Name:</label>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                placeholder="Enter alg Name"
+                onChange={(e) => handleChange(e, "name")}
+              />
+            </li>
+            <li>
+              <label htmlFor="notation">Notation:</label>
+              <input
+                type="text"
+                name="notation"
+                id="notation"
+                value={formData.notation}
+                placeholder="Enter Alg Notation"
+                onChange={(e) => handleChange(e, "notation")}
+              />
+            </li>
+            <li>
+              <label htmlFor="description">Description:</label>
+              <input
+                type="text"
+                name="description"
+                id="description"
+                value={formData.description}
+                placeholder="Enter Alg description"
+                onChange={(e) => handleChange(e, "description")}
+              />
+            </li>
+            <button type="submit" className="add__submit">
+              Add Algorithm
+            </button>
+          </ul>
+        </form>
+      </div>
     </div>
   );
 };
