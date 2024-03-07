@@ -92,25 +92,27 @@ const LOGIN = () => {
       )}
       <form>
         <ul className="login__ul">
+          <p>WELCOME TO CUBE SPACE</p>
+          <p>LOGIN</p>
           <li>
-            <label htmlFor="email">Email:</label>
+            {/* <label htmlFor="email">Email:</label> */}
             <input
               type="text"
               name="email"
               id="email"
               value={formData.email}
-              placeholder="Enter Your Email"
+              placeholder="Email"
               onChange={(e) => handleChange(e, "email")}
             />
           </li>
           <li>
-            <label htmlFor="password">Password:</label>
+            {/* <label htmlFor="password">Password:</label> */}
             <input
               type="password"
               name="password"
               id="password"
               value={formData.password}
-              placeholder="Enter Your Password"
+              placeholder="Password"
               onChange={(e) => handleChange(e, "pass")}
             />
           </li>

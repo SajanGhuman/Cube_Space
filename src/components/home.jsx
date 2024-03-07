@@ -30,9 +30,15 @@ const Home = () => {
         </span>
       </div>
       <div>
-        <Link to="/content">
-          <button className="alg-button">Algorithms</button>
-        </Link>
+        {localStorage.getItem("login") === "true" ? (
+          <Link to="/Dashboard">
+            <button className="alg-button">Algorithms</button>
+          </Link>
+        ) : (
+          <Link to="/content">
+            <button className="alg-button">Algorithms</button>
+          </Link>
+        )}
       </div>
       {/* <Cursor cursorVariant={cursorVariant} /> */}
       <Mask cursorVariant={cursorVariant} />

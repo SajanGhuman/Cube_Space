@@ -45,7 +45,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/dashboard">DASHBOARD</Link>
+              <Link to="/dashboard" className="dash-nav">DASHBOARD</Link>
             </li>
           </ul>
           <div className={`${menuClass["main-class"]}`} onClick={handleClick}>

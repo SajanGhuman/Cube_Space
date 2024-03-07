@@ -179,7 +179,6 @@ const Content = () => {
                 </select>
               </div>
             </div>
-            ]
             {sortedData.length > 0 ? (
               <div>
                 <table
@@ -202,7 +201,7 @@ const Content = () => {
                       <th>Type</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody className="table__body">
                     {sortedData.length > 0 &&
                       paginatedData.map((item) => (
                         <tr key={item.algID}>
@@ -269,7 +268,93 @@ const Content = () => {
                 />
               </div>
             ) : (
-              <p>No Results Found</p>
+              <div>
+                <table
+                  className={
+                    sort.type === "oll"
+                      ? "oll__table"
+                      : sort.type === "pll"
+                      ? "pll__table"
+                      : sort.type === "f2l"
+                      ? "f2l__table"
+                      : "alg__table"
+                  }
+                >
+                  <thead>
+                    <tr>
+                      <th>AlgID</th>
+                      <th>Case</th>
+                      <th>Name</th>
+                      <th>Notation</th>
+                      <th>Type</th>
+                    </tr>
+                  </thead>
+                  <tbody className="table__body">
+                    {sortedData.length > 0 &&
+                      paginatedData.map((item) => (
+                        <tr key={item.algID}>
+                          <td
+                            className="sorted_td"
+                            onClick={() => navget(`/fullView/${item.algID}`)}
+                          >
+                            {item.algID}
+                          </td>
+                          <td
+                            className="sorted_td"
+                            onClick={() => navget(`/fullView/${item.algID}`)}
+                          >
+                            {item.url !== "" ? (
+                              <img
+                                className="content__image"
+                                src={`/f2l/${encodeURIComponent(item.url)}`}
+                              />
+                            ) : (
+                              ""
+                            )}
+                          </td>
+                          <td
+                            className="sorted_td"
+                            onClick={() => navget(`/fullView/${item.algID}`)}
+                          >
+                            {item.name}
+                          </td>
+                          <td
+                            className="sorted_td"
+                            onClick={() => navget(`/fullView/${item.algID}`)}
+                          >
+                            {item.notation}
+                          </td>
+                          <td>{item.type}</td>
+                          <td>
+                            <Link to={`/edit/${item.algID}`}>
+                              <button
+                                className="content__edit__button"
+                                onClick={() => {
+                                  handleClick(item.algID);
+                                }}
+                              >
+                                Edit
+                              </button>
+                            </Link>
+                          </td>
+                          <td>
+                            <Link to={`/delete/${item.algID}`}>
+                              <button className="content__delete__button">
+                                Delete
+                              </button>
+                            </Link>
+                          </td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+                <Pagination
+                  totalPost={sortedData.length}
+                  postPerPage={postPerPage}
+                  setCurrentPage={setCurrentPage}
+                  currentPage={currentPage}
+                />
+              </div>
             )}
           </div>
         ) : (
@@ -314,11 +399,11 @@ const Content = () => {
                     <tr>
                       <th>AlgID</th>
                       <th>Name</th>
-                      <th>Notation</th>tbody
+                      <th>Notation</th>
                       <th>Type</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody className="table__body">
                     {sortedData.length > 0 &&
                       paginatedData.map((item) => (
                         <tr key={item.algID}>
@@ -358,18 +443,78 @@ const Content = () => {
                       ))}
                   </tbody>
                 </table>
-                <Pagination
-                  totalPost={sortedData.length}
-                  postPerPage={postPerPage}
-                  setCurrentPage={setCurrentPage}
-                  currentPage={currentPage}
-                />
               </div>
             ) : (
               <div className="no__result">
-                <p>No Results Found</p>
+                <div>
+                  <table
+                    className={
+                      sort.type === "oll"
+                        ? "oll__table"
+                        : sort.type === "pll"
+                        ? "pll__table"
+                        : sort.type === "f2l"
+                        ? "f2l__table"
+                        : "alg__table"
+                    }
+                  >
+                    <thead>
+                      <tr>
+                        <th>AlgID</th>
+                        <th>Case</th>
+                        <th>Name</th>
+                        <th>Notation</th>
+                        <th>Type</th>
+                      </tr>
+                    </thead>
+                    <tbody className="table__body">
+                      <tr>
+                        <td className="sorted__td">1</td>
+                        <td className="sorted__td">
+                          <img src="/f2l/generator1.svg" alt="" />
+                        </td>
+                        <td className="sorted__td">F2l 1</td>
+                        <td className="sorted__td">R' F R F'</td>
+                        <td>F2l</td>
+                      </tr>
+                      <tr>
+                        <td className="sorted__td">1</td>
+                        <td className="sorted__td">
+                          <img src="/f2l/generator1.svg" alt="" />
+                        </td>
+                        <td className="sorted__td">F2l 1</td>
+                        <td className="sorted__td">U' R U R' U R U R'</td>
+                        <td>F2l</td>
+                      </tr>
+                      <tr>
+                        <td className="sorted__td">1</td>
+                        <td className="sorted__td">
+                          <img src="/f2l/generator1.svg" alt="" />
+                        </td>
+                        <td className="sorted__td">F2l 1</td>
+                        <td className="sorted__td">U' R U2 R' U F' U' F</td>
+                        <td>F2l</td>
+                      </tr>
+                      <tr>
+                        <td className="sorted__td">1</td>
+                        <td className="sorted__td">
+                          <img src="/f2l/generator1.svg" alt="" />
+                        </td>
+                        <td className="sorted__td">F2l 1</td>
+                        <td className="sorted__td">U' R U2 R' U F' U' F</td>
+                        <td>F2l</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             )}
+            {/* <Pagination
+              totalPost={sortedData.length}
+              postPerPage={postPerPage}
+              setCurrentPage={setCurrentPage}
+              currentPage={currentPage}
+            /> */}
           </div>
         )}
       </div>
